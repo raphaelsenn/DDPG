@@ -10,7 +10,7 @@ My implementation is not a complete reproduction of the original work, it is mor
 | ![ddpg_halfcheetah_return](./assets/ddpg_halfcheetah_avg_return.png) | ![ddpg_ant_return](./assets/ddpg_ant_avg_return.png) | ![ddpg_hopper_return](./assets/ddpg_hopper_avg_return.png) | ![ddpg_walker_return](./assets/ddpg_walker_avg_return.png) |
 
 
-Figures: Learning curves for the OpenAI Gym continuous control tasks HalfCheetah-v5, Ant-v5, Hopper-v5 and Walker2d-v5. The shaded region represents the standard deviation of the average evaluation over 10 trials across 3 different seeds. Curves are smoothed with an average filter of size 3.
+Figures: Learning curves for the OpenAI Gym continuous control tasks HalfCheetah-v5, Ant-v5, Hopper-v5 and Walker2d-v5. The shaded region represents the standard deviation of the average evaluation over 3 trials (across 3 seeds). Curves are smoothed with an average filter of size 3.
 
 ## Algorithm
 
@@ -34,8 +34,8 @@ from ddpg import DDPG, ActorMLP, CriticMLP
 
 
 env = gym.make("HalfCheetah-v5")
-actor = ActorMLP(state_dim=17, h1_dim=400, h2_dim=300, action_dim=3)
-critic = CriticMLP(state_dim=17, h1_dim=400, h2_dim=300, action_dim=3)
+actor = ActorMLP(state_dim=17, h1_dim=400, h2_dim=300, action_dim=6)
+critic = CriticMLP(state_dim=17, h1_dim=400, h2_dim=300, action_dim=6)
 
 ddpg = DDPG(
     actor, 
