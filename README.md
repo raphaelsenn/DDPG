@@ -9,8 +9,14 @@ My implementation is not a complete reproduction of the original work, it is mor
 | ![halfcheetah_gif](./assets/ddpg_halfcheetah.gif) | ![ant_gif](./assets/ddpg_ant.gif) | ![hopper_gif](./assets/ddpg_hopper.gif) | ![walker_gif](./assets/ddpg_walker.gif) |
 | ![ddpg_halfcheetah_return](./assets/ddpg_halfcheetah_avg_return.png) | ![ddpg_ant_return](./assets/ddpg_ant_avg_return.png) | ![ddpg_hopper_return](./assets/ddpg_hopper_avg_return.png) | ![ddpg_walker_return](./assets/ddpg_walker_avg_return.png) |
 
-
 Figures: Learning curves for the OpenAI Gym continuous control tasks HalfCheetah-v5, Ant-v5, Hopper-v5 and Walker2d-v5. The shaded region represents the standard deviation of the average evaluation over 3 trials (across 3 seeds). Curves are smoothed with an average filter of size 3.
+
+| Environment | Average Return |
+| --  | -- | 
+| HalfCheetah-v5 | 10097 +/- 170 |
+| Ant-v5 | 10097 +/- 170 |
+| Hopper-v5 | 10097 +/- 170 |
+| Walker2d-v5 | 10097 +/- 170 |
 
 ## Algorithm
 
@@ -72,6 +78,15 @@ ddpg.train(env)
 | BatchNorm | No | Yes |   
 
 Note: In this implementation the critic receives both the state and the action as an input to the first layer.
+
+Table below summarizes the achived performance after ~1M steps across three seeds.
+
+| Environment | Average Return |
+| --  | -- | 
+| HalfCheetah-v5 | 10886.83 ± 320.85 |
+| Ant-v5 |  1074.45 ± 311.84 |
+| Hopper-v5 | 2090.75 ± 352.70 |
+| Walker2d-v5 | 1891.57 ± 233.16 |
 
 ## Citations
 
